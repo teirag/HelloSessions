@@ -22,7 +22,7 @@ passport.use(new LocalStrategy(function(username, password, done) {
     }
     else if ((username && password) && users[username])
     {
-         return done(null, { username: username, password: password, data: {} });
+         return done(null, users[username]);
     }
     return done(null, false);
 }));
